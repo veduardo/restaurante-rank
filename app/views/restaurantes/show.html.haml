@@ -1,0 +1,24 @@
+%h1
+  Mostrando o Restaurante
+
+%p
+  %b
+    Nome: 
+  = @restaurante.nome
+
+%p
+  %b
+    Endereço:
+  = @restaurante.endereco
+
+%p
+  %b
+    Especialidade:
+  = @restaurante.especialidade
+
+= link_to 'Qualificar esse restaurante!', :controller => 'qualificacoes', 
+                                          :action => 'new',
+                                          :restaurante => @restaurante
+                                          
+= link_to 'Editar', action: 'edit', id: @restaurante
+= link_to 'Voltar', action: 'index'

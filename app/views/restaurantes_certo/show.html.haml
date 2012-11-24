@@ -1,0 +1,22 @@
+= boas_vindas
+%h1
+  Exibindo Restaurante
+
+%p
+  %b
+    Nome
+  = @restaurante.nome
+
+%p
+  %b
+    Endereço
+  = @restaurante.endereco
+
+%p
+  %b
+    Especialidade
+  = @restaurante.especialidade
+
+%br
+= link_to 'Editar', action: 'edit', id: @restaurante
+= link_to 'Voltar', action: 'index'

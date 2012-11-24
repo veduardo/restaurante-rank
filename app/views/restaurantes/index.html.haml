@@ -1,0 +1,29 @@
+%h1
+  Restaurantes Participantes:
+
+%table
+  %tr
+    %th
+      Nome
+    %th
+      Endereço
+    %th
+      Especialidade
+  - @restaurantes.each do |restaurante|
+    %tr
+      %td
+        = restaurante.nome
+      %td.alt
+        = restaurante.endereco
+      %td
+        = restaurante.especialidade
+
+      %td
+        = link_to 'Mostrar', action: 'show', id: restaurante
+      %td
+        = link_to 'Editar', action: 'edit', id: restaurante
+      %td
+        = link_to 'Deletar', restaurante_path(restaurante), method: :delete
+
+%br
+= link_to 'Novo', action: 'new'
