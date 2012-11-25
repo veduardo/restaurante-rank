@@ -1,24 +1,37 @@
+= flash[:alerta]
+= boas_vindas
 %h1
-  Mostrando o Restaurante
+  Exibindo Restaurante
 
 %p
   %b
-    Nome: 
+    Nome
   = @restaurante.nome
 
 %p
   %b
-    Endereço:
+    Endereço
   = @restaurante.endereco
 
 %p
   %b
-    Especialidade:
+    Especialidade
   = @restaurante.especialidade
 
-= link_to 'Qualificar esse restaurante!', :controller => 'qualificacoes', 
+%p
+  %b
+    Nota média:
+  = @restaurante.qualificacoes.average(:nota)
+
+%br
+
+= link_to 'Qualificar este restaurante',  :controller => 'qualificacoes',
                                           :action => 'new',
                                           :restaurante => @restaurante
                                           
 = link_to 'Editar', action: 'edit', id: @restaurante
 = link_to 'Voltar', action: 'index'
+#comentarios
+  - unless @restaurante.comentarios.empty?
+    = comentarios @restaurante
+= novo_comentario(@restaurante)

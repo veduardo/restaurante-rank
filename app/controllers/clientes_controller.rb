@@ -1,17 +1,13 @@
 class ClientesController < ApplicationController
-
-  respond_to :html, :json, :xml
-
   # GET /clientes
   # GET /clientes.json
   def index
     @clientes = Cliente.all
 
-    respond_with @clientes
-    # respond_to do |format|
-    #   format.html # index.html.erb
-    #   format.json { render json: @clientes }
-    # end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @clientes }
+    end
   end
 
   # GET /clientes/1
@@ -19,11 +15,10 @@ class ClientesController < ApplicationController
   def show
     @cliente = Cliente.find(params[:id])
 
-    respond_with @cliente
-    # respond_to do |format|
-    #   format.html # show.html.erb
-    #   format.json { render json: @cliente }
-    # end
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @cliente }
+    end
   end
 
   # GET /clientes/new
@@ -31,11 +26,10 @@ class ClientesController < ApplicationController
   def new
     @cliente = Cliente.new
 
-    respond_with @cliente
-    # respond_to do |format|
-    #   format.html # new.html.erb
-    #   format.json { render json: @cliente }
-    # end
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @cliente }
+    end
   end
 
   # GET /clientes/1/edit

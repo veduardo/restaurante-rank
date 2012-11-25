@@ -1,7 +1,7 @@
 %h1
-  Restaurantes Participantes:
+  Listagem de Restaurantes
 
-%table
+%table.table.table-bordered.table-striped
   %tr
     %th
       Nome
@@ -9,21 +9,10 @@
       Endereço
     %th
       Especialidade
-  - @restaurantes.each do |restaurante|
-    %tr
-      %td
-        = restaurante.nome
-      %td.alt
-        = restaurante.endereco
-      %td
-        = restaurante.especialidade
 
-      %td
-        = link_to 'Mostrar', action: 'show', id: restaurante
-      %td
-        = link_to 'Editar', action: 'edit', id: restaurante
-      %td
-        = link_to 'Deletar', restaurante_path(restaurante), method: :delete
+  = render :partial => 'restaurante', :collection => @restaurantes
+
+= paginate @restaurantes
 
 %br
 = link_to 'Novo', action: 'new'

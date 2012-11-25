@@ -1,17 +1,14 @@
 class QualificacoesController < ApplicationController
-
-  respond_to :html, :json, :xml
-
+  before_filter :carrega_clientes_restaurantes, {except: [:show, :index, :destroy]}
   # GET /qualificacoes
   # GET /qualificacoes.json
   def index
     @qualificacoes = Qualificacao.all
 
-    respond_with @qualificacoes
-    # respond_to do |format|
-      # format.html # index.html.erb
-      # format.json { render json: @qualificacoes }
-    # end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @qualificacoes }
+    end
   end
 
   # GET /qualificacoes/1
@@ -19,11 +16,10 @@ class QualificacoesController < ApplicationController
   def show
     @qualificacao = Qualificacao.find(params[:id])
 
-    respond_with @qualificacao
-    # respond_to do |format|
-    #   format.html # show.html.erb
-    #   format.json { render json: @qualificacao }
-    # end
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @qualificacao }
+    end
   end
 
   # GET /qualificacoes/new
@@ -37,6 +33,7 @@ class QualificacoesController < ApplicationController
 
     if params[:restaurante]
       @qualificacao.restaurante = Restaurante.find(params[:restaurante])
+      logger.info(@qualificacao)
     end
 
     respond_to do |format|
@@ -92,5 +89,11 @@ class QualificacoesController < ApplicationController
       format.html { redirect_to qualificacoes_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def carrega_clientes_restaurantes
+    @clientes = Cliente.order :nome
+    @restaurantes = Restaurante.order :nome
   end
 end

@@ -1,6 +1,6 @@
-<h1>Qualificações atuais:</h1>
+<h1>Listing qualificacoes</h1>
 
-<table>
+<table class="table table-bordered table-striped">
   <tr>
     <th>Cliente</th>
     <th>Restaurante</th>
@@ -19,10 +19,11 @@
     <td><%= valor_formatado(qualificacao.valor_gasto) %></td>
     <td><%= link_to 'Show', qualificacao %></td>
     <td><%= link_to 'Edit', edit_qualificacao_path(qualificacao) %></td>
+    <td><%= link_to 'Destroy', qualificacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'Nova Qualificação', new_qualificacao_path %>
+<%= link_to 'New Qualificacao', new_qualificacao_path %>

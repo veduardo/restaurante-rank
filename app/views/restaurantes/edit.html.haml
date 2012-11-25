@@ -1,13 +1,13 @@
 %h1
-  Editando o Restaurante
+  Editando Restaurante
 
 - if @restaurante.errors.any?
   %ul
-    - @restaurante.errors.full_messages.each do |msg|
-      %li
-        = msg
+  - @restaurante.errors.full_messages.each do |msg|
+    %li
+      = msg
 
 = render :partial => 'form', :locals => {:restaurante => @restaurante}
 
 %br
-= link_to 'Voltar', {action: 'index'}
+= link_to 'Voltar', action: 'index'

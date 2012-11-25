@@ -1,11 +1,6 @@
 class HelloWorldController < ApplicationController
-  
-  def hello
-    render text: 'Hello World!'
-  end
-
-  def index
-    hello
-  end
-
+  # def hello
+  #   @hora = Time.now #("%H:%M:%S")
+  #   @primeiro_restaurante = Restaurante.first
+  # end
 end

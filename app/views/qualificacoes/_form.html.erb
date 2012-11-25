@@ -15,19 +15,21 @@
     <% if @qualificacao.cliente %>
       <%= f.hidden_field 'cliente_id' %>
     <% else %>
-      <%= f.label :cliente_id %><br />
-      <%= f.collection_select(:cliente_id, Cliente.order('nome'),
-                                          :id, :nome, {:prompt => true}) %>
-    <% end %>                                        
+      <p><%= f.label :cliente_id %><br />
+      <% # @clientes vem do método privado `carrega_clientes_restaurantes` %>
+      <%= f.collection_select(:cliente_id, @clientes,
+                              :id, :nome, {:prompt => true}) %></p>
+    <% end %>
   </div>
   <div class="field">
     <% if @qualificacao.restaurante %>
       <%= f.hidden_field 'restaurante_id' %>
     <% else %>
-      <%= f.label :restaurante_id %><br />
-      <%= f.collection_select(:restaurante_id, Restaurante.order('nome'), 
-                                              :id, :nome, {:prompt => true}) %>
-    <% end %>                                        
+      <p><%= f.label :restaurante_id %><br />
+      <% # @restaurantes vem do método privado `carrega_clientes_restaurantes` %>
+      <%= f.collection_select(:restaurante_id, @restaurantes,
+                              :id, :nome, {:prompt => true}) %></p>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :nota %><br />
