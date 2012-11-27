@@ -19,51 +19,55 @@
 <center>
 <body>
 
-<div class="navbar navbar-inverse navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <a class="brand" href="#">Vota Prato</a>
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li class="active"><a href="/">Home</a></li>
-          <%= menu_principal %>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#about">About</a></li>
-        </ul>
-      </div><!--/.nav-collapse -->
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span2">
-      <div class="well sidebar-nav">
-        <ul class="nav nav-list">
-          <li class="nav-header">Menu</li>
-          <%= menu_principal %>
-        </ul>
-      </div>
-    </div>
-
-    <div class="span9">
-      <div class="hero-unit">
-        <h1>O Melhor Restuarante da Cidade!</h1>
-        <br>
-        <p><a class="btn btn-primary btn-large">Quero Votar! &raquo;</a></p>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">Vota Prato</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li class="active"><a href="/">Home</a></li>
+            <%= menu_principal %>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
   </div>
-</div>
 
-<div class="container">
-<%= yield %>
-</div>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span2">
+        <div class="well sidebar-nav">
+          <ul class="nav nav-list">
+            <li class="nav-header">Menu</li>
+            <%= menu_principal %>
+          </ul>
+        </div>
+      </div>
+
+      <div class="span9">
+        <div class="hero-unit">
+          <h1>O Melhor Restuarante da Cidade!</h1>
+          <br>
+          <p><a class="btn btn-primary btn-large">Quero Votar! &raquo;</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+  <script type="text/javascript">
+    <%= yield :js %>
+  </script>
+
 </body>
 </center>
 </html>
