@@ -17,4 +17,5 @@
 ActiveSupport::Inflector.inflections do |inflect|
   # Pluraliza 'qualificação' de forma correta
   inflect.irregular 'qualificacao', 'qualificacoes'
+  inflect.irregular 'cliente', 'clientes'
 end

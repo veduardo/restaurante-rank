@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(:version => 20121124133750) do
   add_index "qualificacoes", ["cliente_id"], :name => "index_qualificacoes_on_cliente_id"
   add_index "qualificacoes", ["restaurante_id"], :name => "index_qualificacoes_on_restaurante_id"
 
-  create_table "receita", :force => true do |t|
+  create_table "receitas", :force => true do |t|
     t.integer  "prato_id"
     t.text     "conteudo"
     t.datetime "created_at", :null => false

@@ -25,11 +25,11 @@ class RestaurantesController < ApplicationController
     @restaurante = Restaurante.new
 
     # Exibe layout de acordo com a condição
-    if 1 == 1
-      render :new, :layout => 'premium'
-    else
+    # if 1 == 1
+      # render :new, :layout => 'premium'
+    # else
       render :new
-    end
+    # end
 
     # respond_with @restaurante
   end
