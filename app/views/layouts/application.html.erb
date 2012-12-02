@@ -51,19 +51,12 @@
         </div>
       </div>
 
-      <div class="span9">
-        <div class="hero-unit">
-          <h1>O Melhor Restuarante da Cidade!</h1>
-          <br>
-          <p><a class="btn btn-primary btn-large">Quero Votar! &raquo;</a></p>
-        </div>
+      <div class="container">
+        <%= yield %>
       </div>
     </div>
   </div>
 
-  <div class="container">
-    <%= yield %>
-  </div>
   <script type="text/javascript">
     <%= yield :js %>
   </script>

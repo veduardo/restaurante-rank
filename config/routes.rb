@@ -5,7 +5,10 @@ VotaPrato::Application.routes.draw do
 
   resources :clientes
 
-  root :to => 'restaurantes#index'
+  resources :main
+
+  # root :to => 'restaurantes#index'
+  root :to => 'inicio#index'
   
   resources :restaurantes do
     resources :qualificacoes
