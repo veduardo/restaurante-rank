@@ -15,7 +15,7 @@ development:
   database: vota_prato_development
   pool: 5
   username: root
-  password:
+  password: password1$
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -28,7 +28,7 @@ test:
   database: vota_prato_test
   pool: 5
   username: root
-  password:
+  password: password1$
   host: localhost
 
 production:
@@ -38,5 +38,5 @@ production:
   database: vota_prato_production
   pool: 5
   username: root
-  password:
+  password: password1$
   host: localhost

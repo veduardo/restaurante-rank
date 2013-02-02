@@ -7,9 +7,6 @@ VotaPrato::Application.routes.draw do
 
   resources :main
 
-  # root :to => 'restaurantes#index'
-  root :to => 'inicio#index'
-  
   resources :restaurantes do
     resources :qualificacoes
   end
@@ -20,6 +17,8 @@ VotaPrato::Application.routes.draw do
 
   match '/mostra' => 'restaurantes#mostra'
 
+  root :to => 'inicio#index'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
